@@ -78,11 +78,11 @@ chattr -i /etc/sysctl.conf
 cat > /etc/sysctl.conf << EOF
 vm.swappiness = 0
 fs.file-max = 1024000
-net.core.rmem_max = 4194304
-net.core.wmem_max = 4194304
+net.core.rmem_max = 134217728
+net.core.wmem_max = 134217728
 net.core.netdev_max_backlog = 750000
 net.core.somaxconn = 1024000
-net.core.default_qdisc = fq_pie
+net.core.default_qdisc = fq
 net.ipv4.conf.all.rp_filter = 0
 net.ipv4.conf.default.rp_filter = 0
 net.ipv4.conf.lo.arp_announce = 2
@@ -106,8 +106,8 @@ net.ipv4.tcp_max_syn_backlog = 65536
 net.ipv4.tcp_max_tw_buckets = 32786
 net.ipv4.tcp_fastopen = 3
 net.ipv4.tcp_mtu_probing = 1
-net.ipv4.tcp_rmem = 4096 65536 4194304
-net.ipv4.tcp_wmem = 4096 65536 4194304
+net.ipv4.tcp_rmem = 4096 87380 67108864
+net.ipv4.tcp_wmem = 4096 65536 67108864
 net.ipv4.tcp_congestion_control = bbr
 net.ipv6.conf.all.forwarding = 1
 net.ipv6.conf.default.forwarding = 1
